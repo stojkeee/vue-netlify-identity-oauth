@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <p>Vue</p>
+  <div id="app">
+    <router-view />
   </div>
 </template>
 
@@ -11,4 +11,9 @@ export default {
 </script>
 
 <style>
+#app {
+  font-family: 'Roboto', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 </style>
