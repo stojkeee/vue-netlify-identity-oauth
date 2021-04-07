@@ -1,12 +1,48 @@
 <template>
-  <div class="login">
-    Login
+  <div class="content">
+    <div class="login">
+      <h3>Log In</h3>
+      <Button v-for="provider in providers"
+              :key="provider"
+              :provider="provider" />
+    </div>
   </div>
 </template>
 
 <script>
-export default {};
+import Button from '../components/Button';
+
+export default {
+  components: {
+    Button,
+  },
+  name: 'Login',
+  data() {
+    return {
+      providers: [
+        { name: 'Google', color: '#4285f4' }, //
+        { name: 'GitHub', color: '#333333' },
+        { name: 'GitLab', color: '#e24329' },
+        { name: 'BitBucket', color: '#205081' },
+      ],
+    };
+  },
+};
 </script>
 
 <style lang="scss" scoped>
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.login {
+  min-width: 360px;
+  border-radius: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  padding: 24px;
+  text-align: center;
+}
 </style>
