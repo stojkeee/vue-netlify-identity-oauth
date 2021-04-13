@@ -1,7 +1,7 @@
 <template>
   <div class="content">
     <div class="login">
-      <button @click="test">aaa</button>
+      <button>aaa</button>
       {{ process.env.TEST_VAR }}
       <h3>Log In</h3>
       <Button v-for="(provider, i) in providers"
@@ -29,11 +29,7 @@ export default {
       ],
     };
   },
-  methods: {
-    test() {
-      console.log('a');
-    },
-  },
+  methods: {},
 };
 </script>
 
