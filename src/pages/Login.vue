@@ -1,9 +1,11 @@
 <template>
   <div class="content">
     <div class="login">
+      <button @click="test">aaa</button>
+      {{ process.env.TEST_VAR }}
       <h3>Log In</h3>
-      <Button v-for="provider in providers"
-              :key="provider"
+      <Button v-for="(provider, i) in providers"
+              :key="provider + i"
               :provider="provider" />
     </div>
   </div>
@@ -27,10 +29,16 @@ export default {
       ],
     };
   },
+  methods: {
+    test() {
+      console.log('a');
+    },
+  },
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss"
+       scoped>
 .content {
   display: flex;
   align-items: center;
