@@ -1,8 +1,6 @@
 <template>
   <div class="content">
     <div class="login">
-      <button>aaa</button>
-      {{ process.env.TEST_VAR }}
       <h3>Log In</h3>
       <Button v-for="(provider, i) in providers"
               :key="provider + i"
