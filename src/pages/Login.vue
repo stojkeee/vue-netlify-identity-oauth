@@ -4,7 +4,8 @@
       <h3>Log In</h3>
       <Button v-for="(provider, i) in providers"
               :key="provider + i"
-              :provider="provider" />
+              :provider="provider"
+              @click="loginExternal" />
     </div>
   </div>
 </template>
@@ -27,7 +28,11 @@ export default {
       ],
     };
   },
-  methods: {},
+  methods: {
+    loginExternal(val) {
+      console.log(val);
+    },
+  },
 };
 </script>
 
