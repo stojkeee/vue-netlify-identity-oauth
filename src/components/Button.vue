@@ -1,16 +1,25 @@
 <template>
   <button :class="`icon ${provider.name.toLowerCase()}`"
-          :style="`background: ${provider.color}`">
+          :style="`background: ${provider.color}`"
+          @click="buttonClick">
     {{ provider.name }}
   </button>
 </template>
+
 <script>
 export default {
   name: 'Button',
   props: ['provider'],
+  methods: {
+    buttonClick() {
+      return this.$emit('click', this.provider.name);
+    },
+  },
 };
 </script>
-<style lang="scss" scoped>
+
+<style lang="scss"
+       scoped>
 button {
   display: block;
   position: relative;
