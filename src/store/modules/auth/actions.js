@@ -2,8 +2,8 @@ import auth from '@/api/auth';
 import types from './mutationTypes';
 
 export default {
-  attemptGoogleLogin() {
-    window.location.href = auth.loginExternalUrl('google');
+  attemptExternalLogin(payload) {
+    window.location.href = auth.loginExternalUrl(payload);
   },
 
   async initAuth({ dispatch, commit }, params) {
