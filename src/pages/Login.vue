@@ -5,12 +5,13 @@
       <Button v-for="(provider, i) in providers"
               :key="provider + i"
               :provider="provider"
-              @click="loginExternal" />
+              @click="attemptExternalLogin(provider)" />
     </div>
   </div>
 </template>
 
 <script>
+import { mapActions } from 'vuex';
 import Button from '../components/Button';
 
 export default {
@@ -29,9 +30,7 @@ export default {
     };
   },
   methods: {
-    loginExternal(val) {
-      console.log(val);
-    },
+    ...mapActions('auth', ['attemptExternalLogin']),
   },
 };
 </script>
