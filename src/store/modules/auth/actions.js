@@ -2,8 +2,9 @@ import auth from '@/api/auth';
 import types from './mutationTypes';
 
 export default {
-  attemptExternalLogin(payload) {
+  attemptExternalLogin({ commit }, payload) {
     window.location.href = auth.loginExternalUrl(payload);
+    commit(types.SET_PROVIDER, payload);
   },
 
   async initAuth({ dispatch, commit }, params) {
