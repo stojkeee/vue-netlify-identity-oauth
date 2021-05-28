@@ -7,4 +7,7 @@ export default {
   [types.SET_LOADING](state, value) {
     state.loading = value;
   },
+  [types.SET_PROVIDER](state, value) {
+    state.provider = value;
+  },
 };
